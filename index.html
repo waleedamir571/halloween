@@ -181,7 +181,13 @@
                       <div class="w-100">
                         <img class="p-absolute" src="images/home/4v.svg" alt="">
                         <div>
-                          <input class="pl-40" type="text" placeholder="Upload Link.Pdf,etc..." required>
+                          <div class="file-upload-wrapper">
+                            <div class="file-upload-wrapper">
+                              <input class="pl-40" type="text" placeholder="Upload Link.Pdf,etc..." id="file-text" readonly required>
+                              <input type="file" id="file-upload" style="display: none;" accept=".pdf,.doc,.docx,.txt"> <!-- Hidden file input -->
+                            </div>
+                            
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -210,12 +216,12 @@
     <div class="about-sec-div">
       <div class="container">
         <div class="row row-cols-1 row-cols-lg-2 align-items-center">
-          <div class="col"  data-aos="fade-right">
+          <div class="col" data-aos="fade-right">
             <figure>
               <img src="images/about-pic.jpg" alt="ab" />
             </figure>
           </div>
-          <div class="col"  data-aos="fade-left">
+          <div class="col" data-aos="fade-left">
             <h6> About Us </h6>
             <h2> Trick or Treat? Boo! </h2>
             <p>The Spooktacular Stories Challenge is an exciting Halloween-themed writing competition that invites
@@ -227,7 +233,7 @@
               your work in print. So, let your imagination run wild this Halloween and be a part of our creative
               community!</p>
 
-            <a href="" class="btn comon-btn mt-4"> Get to Know us </a>
+            <a href="javascript:$zopim.livechat.window.show()" class="btn comon-btn mt-4"> Get to Know us </a>
           </div>
         </div>
       </div>
@@ -236,7 +242,7 @@
     <div class="ecent-div1 py-5">
       <div class="container">
 
-        <h2 class="comon-mn text-center mt-2"  data-aos="fade-up"> Why Join the Spooktacular Stories Challenge? </h2>
+        <h2 class="comon-mn text-center mt-2" data-aos="fade-up"> Why Join the Spooktacular Stories Challenge? </h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-lg-5 mt-0" data-aos="fade-right">
           <div class="col-md-3">
             <div class="comon-event-div">
@@ -372,7 +378,7 @@
               the winners!</p>
 
 
-            <a href="javascript:$zopim.livechat.window.show()" class="btn comon-btn mt-4"> Submit Your Story Here: </a>
+            <a href="javascript:$zopim.livechat.window.show()" class="btn comon-btn mt-4"> Submit Your Story Here  </a>
           </div>
           <div class="col-md-6" data-aos="fade-left">
             <figure>
@@ -564,40 +570,34 @@
 
   </script>
 
-<script>
-  AOS.init({
+  <script>
+    AOS.init({
       duration: 1000, /* Animation duration in milliseconds */
       offset: 200, /* Distance before animation is triggered */
       once: true   /* Whether animation should happen only once */
-  });
-</script>
+    });
+  </script>
 
   <script>
-    // Function to update the time and date every second
-    function updateTimeAndDate() {
-      const timeElement = document.getElementById('time');
-      const dateElement = document.getElementById('date');
-      const now = new Date();
+// When clicking on the text input, trigger the file input
+document.getElementById('file-text').addEventListener('click', function() {
+    document.getElementById('file-upload').click(); // Trigger hidden file input
+});
 
-      // Format hours, minutes, and seconds
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
+// When the file is selected, display its name in the text input
+document.getElementById('file-upload').addEventListener('change', function() {
+    const fileInput = document.getElementById('file-upload');
+    const fileText = document.getElementById('file-text');
 
-      // Format date (e.g., Thursday, October 24, 2024)
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const formattedDate = now.toLocaleDateString(undefined, options);
-
-      // Display the time and date
-      timeElement.textContent = `${hours}:${minutes}:${seconds}`;
-      dateElement.textContent = formattedDate;
+    // Update the text input to show the name of the selected file
+    if (fileInput.files.length > 0) {
+        fileText.value = fileInput.files[0].name;
+    } else {
+        fileText.value = ''; // Reset if no file is selected
     }
+});
 
-    // Call the updateTimeAndDate function every 1000ms (1 second)
-    setInterval(updateTimeAndDate, 1000);
 
-    // Call once on load to show the time and date immediately
-    updateTimeAndDate();
 
   </script>
 

@@ -183,20 +183,45 @@ h2 {
 	padding-left: 40px;
 }
 
+.file-upload-wrapper {
+	position: relative;
+	
+  }
+  
+  #file-upload-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background-color: #007bff; /* Button color */
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+  }
+  
+  #file-text {
+	width: 100%;
+	padding-right: 90px; /* Adjust padding to fit the button */
+  }
+  
+
 /* Styling for the sticky clock */
 .sticky-clock {
     position: fixed;
     top: 35rem;
     right: 7px;
-    /* background-color: #333; */
     color: white;
     padding: 15px 20px;
-    /* border-radius: 10px; */
     font-family: 'Arial', sans-serif;
     font-size: 18px;
-    z-index: 1000;
+    z-index: 0;
+    pointer-events: none; /* Make the clock non-interactive */
 }
 
+.clock-face {
+    pointer-events: auto; /* Allow interaction with the content inside the clock if needed */
+}
 
 
 
@@ -1326,14 +1351,15 @@ header {
 }
 
 .footer-section {
-	background: url(../images/home/fbg.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	width: 100%;
-	/* background-size: cover; */
-	padding: 100px 0 0px 0px;
-	height: 584px;
-	position: relative;
+    background: url(../images/home/fbg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    /* background-size: cover; */
+    padding: 100px 0 0px 0px;
+    height: 584px;
+    position: relative;
+    z-index: -1;
 }
 
 .comon-footer h5 {
@@ -2274,17 +2300,17 @@ button.close-menu {
 	}
 
 	.sticky-clock {
-		position: fixed;
-		top: 30rem;
-		right: 7px;
-		/* background-color: #333; */
-		color: white;
-		padding: 15px 20px;
-		/* border-radius: 10px; */
-		font-family: 'Arial', sans-serif;
-		font-size: 18px;
-		z-index: 1000;
-	}
+        position: fixed;
+        top: 30rem;
+        right: 7px;
+        /* background-color: #333; */
+        color: white;
+        padding: 15px 20px;
+        /* border-radius: 10px; */
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+        z-index: 1;
+    }
 
 	.bat-container {
 		width: 133.3333333333px;
