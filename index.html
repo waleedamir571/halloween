@@ -579,6 +579,44 @@
   </script>
 
   <script>
+    function updateTimeAndDate() {
+    const timeElement = document.getElementById('time');
+    const dateElement = document.getElementById('date');
+    const now = new Date();
+
+    // Get hours, minutes, and seconds
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    // Determine AM or PM
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // if hours is 0, set it to 12 (midnight or noon)
+
+    // Format hours, minutes, and seconds
+    hours = String(hours).padStart(2, '0');
+
+    // Format date (e.g., Thursday, October 24, 2024)
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = now.toLocaleDateString(undefined, options);
+
+    // Display the time and date
+    timeElement.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+    dateElement.textContent = formattedDate;
+}
+
+// Call the updateTimeAndDate function every 1000ms (1 second)
+setInterval(updateTimeAndDate, 1000);
+
+// Call once on load to show the time and date immediately
+updateTimeAndDate();
+
+  </script>
+
+  <script>
 // When clicking on the text input, trigger the file input
 document.getElementById('file-text').addEventListener('click', function() {
     document.getElementById('file-upload').click(); // Trigger hidden file input
