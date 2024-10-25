@@ -182,11 +182,10 @@
                         <img class="p-absolute" src="images/home/4v.svg" alt="">
                         <div>
                           <div class="file-upload-wrapper">
-                            <div class="file-upload-wrapper">
-                              <input class="pl-40" type="text"  name="file"  accept="application/pdf,.doc,.docx" placeholder="Upload Link.Pdf,etc..." id="file-text" readonly required>
-                              <input type="file" id="file-upload" style="display: none;" accept=".pdf,.doc,.docx,.txt"> <!-- Hidden file input -->
-                            </div>
-                            
+                            <label for="file-upload" class="custom-file-upload pl-40">
+                              Upload Link.Pdf,etc...
+                            </label>
+                            <input  type="file" id="file-upload" accept=".pdf,.doc,.docx,.txt" style="display: none;" required>
                           </div>
                         </div>
                       </div>
@@ -635,6 +634,17 @@ document.getElementById('file-upload').addEventListener('change', function() {
     }
 });
 
+document.getElementById('file-upload').addEventListener('change', function() {
+    const fileInput = document.getElementById('file-upload');
+    const label = document.querySelector('.custom-file-upload');
+
+    // Update the label to show the file name when selected
+    if (fileInput.files.length > 0) {
+        label.textContent = fileInput.files[0].name;  // Display the selected file name
+    } else {
+        label.textContent = 'Upload Link.Pdf,etc...'; // Reset to default text if no file is selected
+    }
+});
 
 
   </script>
