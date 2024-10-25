@@ -117,12 +117,69 @@ h2 {
 	margin: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+  }
+
 .parallelogram {
 	width: 100px;
 	height: 50px;
 	transform: skew(20deg);
 	background: #555;
 }
+
+.sticky-clock {
+    position: fixed;
+    top: 35rem;
+    right: 7px;
+    color: black;
+   
+    font-size: 18px;
+    z-index: 10;
+    text-align: center;
+}
+
+.clock-face {
+    text-align: center;
+}
+
+/* Apply background and shadow only to each countdown value */
+.countdown-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px; /* Reduced the gap between boxes */
+    width: 100%; /* Full width for the countdown box */
+}
+
+.countdown-box div {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    flex: 1; /* Make each element take equal space */
+}
+
+.banner-inside1 {
+    background: url(../images/home/tbg.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    min-height: 100vh;
+    /* display: inline-block; */
+    /* position: relative; */
+    /* overflow: hidden; */
+}
+
+.countdown-box div strong {
+    display: inline-block;
+    width: 68%;
+    padding: 8px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	font-family: 'HappyHalloween';
+}
+
 
 /* Styling for the circular sticky clock */
 .sticky-clock {
@@ -162,25 +219,40 @@ h2 {
 	100% { transform: translateY(0); }    /* Returns to starting position */
 }
 /* Time and Date Styling */
-#time {
-	font-size: 24px;
-	font-weight: bold;
-	margin: 5px 0;
-}
 
 
 
 #date {
-    font-size: 14px;
+    font-size: 17px;
     font-style: italic;
     margin: 0;
     opacity: 0.9;
-    padding-top: 94px;
+    padding-top: 70px;
     font-weight: bold;
+    font-family: 'HappyHalloween';
+    text-align: center;
+    padding-right: 20px;
 }
-
 .pl-40 {
 	padding-left: 40px !important;
+}
+
+.thank-h{
+	.comon-footer h5 {
+		font-family: 'Ghostphobia';
+		color: #fff;
+		font-size: 60px;
+		font-weight: 400;
+		line-height: 75px;
+	}
+}
+
+.thank {
+    margin-bottom: 12px;
+    /* font-family: 'HappyHalloween'; */
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
 }
 
 .custom-file-upload {
@@ -239,7 +311,7 @@ h2 {
 
 
 #time {
-	margin: 0;
+    margin: 11px 50px 14px 25px;
 }
 
 
@@ -2135,7 +2207,55 @@ button.close-menu {
 	background: #000 url(../images/banner-img.jpg) no-repeat;
 }
 
+@media(min-width:1280px) and (max-width: 1540px) {
+
+	.bg-1 {
+		background: url(../images/home/circle.png) no-repeat center center;
+		background-size: cover;
+		width: 20vw;
+		height: 20vw;
+		box-shadow: 0px 4px 41px 0px #F24405 inset;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 500px;
+		max-height: 500px;
+	}
+
+	.wrapper {
+		padding: 63px 20px;
+		height: 32vh;
+	}
+
+	.gallery-div {
+		display: inline-block;
+		width: 100%;
+		padding: 120px 0;
+		background: #000 url(../images/home/line.png) no-repeat;
+		background-position: center center;
+		background-size: 100%;
+	}
+
+	.top-3 {
+		position: relative;
+		left: 55%;
+		top: 3.5rem;
+		width: 49%;
+	}
+
+	.h-13 {
+		height: 13rem;
+		margin-left: 6rem;
+	}
+
+	
+}
+
 @media screen and (max-width: 1180px) {
+
+
 
 	.banner-text1 h1,
 	.banner-text1 h1 span {
@@ -2282,14 +2402,40 @@ button.close-menu {
 
 @media (min-width: 320px) and (max-width: 480px) {
 
-	#date {
-		font-size: 14px;
-		font-style: italic;
-		margin: 0;
-		opacity: 0.9;
-		padding-top: 45px;
+	.banner-inside1 {
+		background: url(../images/home/tbg.png) no-repeat;
+		background-size: cover;
+		/* width: 100%; */
+		min-height: 100vh;
+		/* display: inline-block; */
+		/* position: relative; */
+		/* overflow: hidden; */
 	}
 
+	.countdown-box div strong {
+		display: inline-block;
+		width: 68%;
+		padding: 8px;
+		font-size: 18px;
+		background-color: rgba(255, 255, 255, 0.9);
+		color: black;
+		border-radius: 8px;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+		font-family: 'HappyHalloween';
+	}
+
+	#time {
+		margin: 1px 23px 3px 14px;
+		
+	}
+
+    #date {
+        font-size: 14px;
+        font-style: italic;
+        margin: 0;
+        opacity: 0.9;
+        padding-top: 24px;
+    }
 	.clock-face {
 		position: relative;
 		top: 0rem;
@@ -2374,9 +2520,9 @@ button.close-menu {
 	}
 
 	.wrapper {
-		padding: 137px 20px;
-		height: 44vh;
-	}
+        padding: 112px 20px;
+        height: 44vh;
+    }
 
 	.container,
 	.container-fluid,
@@ -2393,23 +2539,23 @@ button.close-menu {
 	}
 
 	.comon-btn1 {
-		background: #ff5003;
-		color: #fff !important;
-		font-family: 'HappyHalloween';
-		border-radius: 30px;
-		font-size: 15px;
-		padding: 16px 40px;
-		/* border-radius: 0 50px 50px 0; */
-		width: 37%;
-		position: relative;
-		left: -9.5rem;
-		display: flex;
-		/* width: 199px; */
-		height: 55px;
-		text-align: center;
-		/* padding: 20px 32px; */
-		top: 0.2rem;
-	}
+        background: #ff5003;
+        color: #fff !important;
+        font-family: 'HappyHalloween';
+        border-radius: 30px;
+        font-size: 16px;
+        padding: 17px 23px 10px 35px;
+        /* border-radius: 0 50px 50px 0; */
+        width: 37%;
+        position: relative;
+        left: -39.5%;
+        display: flex;
+        /* width: 199px; */
+        height: 55px;
+        text-align: center;
+        /* padding: 20px 32px; */
+        top: 0.2rem;
+    }
 
 	.form-control1 {
 		display: block;
@@ -2603,10 +2749,8 @@ button.close-menu {
 	}
 
 	.fot-list {
-		position: absolute;
-
-	}
-
+        position: absolute !important;
+    }
 	.comon-btn,
 	.about-btn {
 		font-size: 16px;
