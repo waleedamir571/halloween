@@ -18,7 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=Griffy&amp;family=Jost:wght@200;300;400;500;600;700;800&amp;family=Source+Sans+Pro:wght@300;400;600;700;900&amp;display=swap"
     rel="stylesheet">
   <link href="css/all.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 
   <link rel="stylesheet" href="css/owl.carousel.min.css" />
   <link rel="stylesheet" href="css/owl.theme.default.min.css" />
